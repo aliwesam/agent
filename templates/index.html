@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Best Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for Best Football Player of the Year</h1>
+        <form action="/vote" method="post" class="vote-form">
+            {% for player in players %}
+            <label>
+                <input type="radio" name="player" value="{{ player }}" required> {{ player }}
+            </label>
+            {% endfor %}
+            <button type="submit">Vote</button>
+        </form>
+    </div>
+</body>
+</html>
