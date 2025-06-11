@@ -13,3 +13,5 @@ This simple Flask application allows users to vote for the best football player 
    python app.py
    ```
 3. Visit `http://localhost:5000` in your browser to vote.
+
+The UI is styled using [Tailwind CSS](https://tailwindcss.com) loaded from a CDN, so no additional setup is required.

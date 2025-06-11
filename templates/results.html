@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Current Results</h1>
-        <div class="results">
-            <ul>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto bg-white p-6 mt-10 shadow-md rounded">
+        <h1 class="text-2xl font-bold text-center mb-6">Current Results</h1>
+        <div>
+            <ul class="space-y-2">
                 {% for player, count in votes.items() %}
-                <li><strong>{{ player }}:</strong> {{ count }} votes</li>
+                <li class="flex justify-between"><span class="font-semibold">{{ player }}</span><span>{{ count }} votes</span></li>
                 {% endfor %}
             </ul>
         </div>
-        <a href="{{ url_for('index') }}">Back to Vote</a>
+        <a href="{{ url_for('index') }}" class="block mt-6 text-center text-blue-500 hover:underline">Back to Vote</a>
     </div>
 </body>
 </html>
